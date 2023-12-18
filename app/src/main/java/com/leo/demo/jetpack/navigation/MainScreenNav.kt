@@ -1,4 +1,4 @@
-package com.leo.demo.jetpack.ui.navigation
+package com.leo.demo.jetpack.navigation
 
 import android.util.Log
 import androidx.annotation.StringRes
