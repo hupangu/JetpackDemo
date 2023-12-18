@@ -1,4 +1,4 @@
-package com.leo.demo.jetpack.screen
+package com.leo.demo.jetpack.ui.navigation
 
 import android.util.Log
 import androidx.annotation.StringRes
@@ -22,11 +22,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.leo.demo.jetpack.R
-import com.leo.demo.jetpack.category.CategoryScreen
-import com.leo.demo.jetpack.home.HomeScreen
-import com.leo.demo.jetpack.me.MeScreen
-import com.leo.demo.jetpack.shopping.ShoppingScreen
+import com.leo.demo.jetpack.ui.R
+import com.leo.demo.jetpack.ui.main.CATEGORY_SCREEN_ROUTE
+import com.leo.demo.jetpack.ui.main.CategoryScreen
+import com.leo.demo.jetpack.ui.main.HOME_SCREEN_ROUTE
+import com.leo.demo.jetpack.ui.main.HomeScreen
+import com.leo.demo.jetpack.ui.main.ME_SCREEN_ROUTE
+import com.leo.demo.jetpack.ui.main.MeScreen
+import com.leo.demo.jetpack.ui.main.SHOPPING_SCREEN_ROUTE
+import com.leo.demo.jetpack.ui.main.ShoppingScreen
 
 sealed class MainScreenNav(val route: String, @StringRes val resourceId: Int) {
     companion object {
@@ -44,18 +48,18 @@ sealed class MainScreenNav(val route: String, @StringRes val resourceId: Int) {
                 startDestination = Home.route,
                 modifier = modifier
             ) {
-                composable(Home.route) { HomeScreen(controller) }
-                composable(Category.route) { CategoryScreen(controller) }
-                composable(Shopping.route) { ShoppingScreen(controller) }
-                composable(Me.route) { MeScreen(controller) }
+                composable(Home.route) { HomeScreen() }
+                composable(Category.route) { CategoryScreen() }
+                composable(Shopping.route) { ShoppingScreen() }
+                composable(Me.route) { MeScreen() }
             }
         }
     }
 
-    object Home : MainScreenNav("home", R.string.main_nav_home)
-    object Category : MainScreenNav("category", R.string.main_nav_category)
-    object Shopping : MainScreenNav("shopping", R.string.main_nav_shopping)
-    object Me : MainScreenNav("me", R.string.main_nav_me)
+    object Home : MainScreenNav(HOME_SCREEN_ROUTE, R.string.main_nav_home)
+    object Category : MainScreenNav(CATEGORY_SCREEN_ROUTE, R.string.main_nav_category)
+    object Shopping : MainScreenNav(SHOPPING_SCREEN_ROUTE, R.string.main_nav_shopping)
+    object Me : MainScreenNav(ME_SCREEN_ROUTE, R.string.main_nav_me)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

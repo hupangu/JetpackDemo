@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_nav_home">Home</string>
+    <string name="main_nav_category">Category</string>
+    <string name="main_nav_shopping">Shopping</string>
+    <string name="main_nav_me">Me</string>
+</resources>

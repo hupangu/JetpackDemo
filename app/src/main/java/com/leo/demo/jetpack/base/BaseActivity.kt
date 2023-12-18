@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.leo.demo.jetpack.ui.theme.JetpackTheme
 
 open class BaseActivity : ComponentActivity() {
     protected val tag = this.javaClass.simpleName
@@ -19,7 +18,7 @@ open class BaseActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            JetpackTheme {
+            com.leo.demo.jetpack.ui.theme.JetpackDemoTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

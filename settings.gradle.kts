@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Jetpack"
 include(":app")
+include(":ui")
