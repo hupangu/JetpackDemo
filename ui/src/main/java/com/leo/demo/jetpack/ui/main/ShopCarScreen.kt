@@ -7,6 +7,6 @@ import com.leo.demo.jetpack.ui.base.ScreenPlaceHolder
 const val SHOPPING_SCREEN_ROUTE = "shopping"
 
 @Composable
-fun ShoppingScreen() {
+fun ShopCarScreen() {
     ScreenPlaceHolder(name = "Shopping", background = Color.Blue)
 }

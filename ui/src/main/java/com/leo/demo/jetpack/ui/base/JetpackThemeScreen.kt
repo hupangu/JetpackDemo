@@ -18,11 +18,11 @@ fun ScreenPlaceHolder(name: String, background: Color? = null) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(background ?: MaterialTheme.colorScheme.background),
-            contentAlignment = Alignment.Center
+                .background(background ?: MaterialTheme.colorScheme.background)
         ) {
             Text(
                 text = name,
+                modifier = Modifier.align(Alignment.Center),
                 fontWeight = FontWeight.Bold
             )
         }
